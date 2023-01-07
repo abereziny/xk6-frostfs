@@ -1,4 +1,7 @@
 <p align="center">
+<img src="./.github/logo.svg" width="500px" alt="FrostFS logo">
+</p>
+<p align="center">
   <a href="https://go.k6.io/k6">k6</a> extension to test and benchmark FrostFS related protocols.
 </p>
 
