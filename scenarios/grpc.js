@@ -3,7 +3,7 @@ import native from 'k6/x/frostfs/native';
 import registry from 'k6/x/frostfs/registry';
 import { SharedArray } from 'k6/data';
 import { sleep } from 'k6';
-import { textSummary } from './libs/k6-summary-0.0.2';
+import { textSummary } from './libs/k6-summary-0.0.2.js';
 
 const obj_list = new SharedArray('obj_list', function () {
     return JSON.parse(open(__ENV.PREGEN_JSON)).objects;
@@ -107,7 +107,7 @@ export function teardown(data) {
 
 export function handleSummary(data) {
     return {
-        'stdout': textSummary(data, { indent: ' ', enableColors: true }),
+        'stdout': textSummary(data, { indent: ' ', enableColors: false }),
         [summary_json]: JSON.stringify(data),
     };
 }
